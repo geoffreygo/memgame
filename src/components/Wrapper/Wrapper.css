@@ -1,12 +1,4 @@
 .wrapper {
-    background: #ECEFF1;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 20px;
-    justify-content: space-around;
-    align-content: flex-start;
-    overflow: auto;
-    width: 960px;
     margin: auto;
   }
   
