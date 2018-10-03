@@ -1,0 +1,30 @@
+.navbar {
+    background: #336cd5;
+    min-height: 70px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    padding-bottom: 30px;
+}
+/* 
+.brand {
+    position: absolute;
+    left: 20px;
+}
+
+.instr {
+    position: absolute;
+    left: 400px;
+}
+
+.scores {
+    position: absolute;
+    right: 20px;
+} */
+
+a {
+    color: white;
+}
