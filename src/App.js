@@ -16,14 +16,39 @@ class App extends Component {
   };
   
   restartGame = () => {
-    window.location.reload();
+    let cardDivs = document.getElementsByClassName("card");
+    console.log(cardDivs);
+    for (let div of cardDivs) {
+      div.classList.remove("clicked");
+    };
+    console.log(cardDivs); 
+    this.setState({ score: 0 });
+    // this.updateAlert("12 is your goal!");
+  }
+
+  updateAlert = text => {
+    console.log("in updateAlert", text);
+    let newAlert = document.getElementById("alert");
+    newAlert.innerHTML = text;
+  }
+
+  updateTopScore = score => {
+    if (score > this.state.topScore) {
+      this.setState({ topScore: score });
+      this.updateAlert("You have a new high score!");
+    }
   }
 
   changeScore = () => {
-    if (this.state.score < 12) {
+    console.log(this.state.score);
+    if (this.state.score === 11) {
       this.setState({ score: this.state.score + 1 });
-    } else {
-      // put up winning message
+      console.log(this.state.score);
+      this.updateAlert("You won!! Maximum high score achieved!!");
+      this.updateTopScore(12);
+      this.restartGame();
+    } else {      
+      this.setState({ score: this.state.score + 1 });
     }
   }
 
@@ -42,8 +67,8 @@ class App extends Component {
           score={this.state.score}
           topScore={this.state.topScore}
           />
+          <Title>Try to click every hero without clicking the same hero twice!</Title>
       <Wrapper>
-        <Title></Title>
         {this.state.friends.map(friend => (
           <Card
             id={friend.id}
@@ -54,6 +79,9 @@ class App extends Component {
             changeScore={this.changeScore}
             rearrange={this.rearrange}
             clickPic={this.clickPic}
+            updateTopScore={this.updateTopScore}
+            score={this.state.score}
+            updateAlert={this.updateAlert}
           />
         ))}
       </Wrapper>

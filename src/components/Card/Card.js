@@ -7,6 +7,8 @@ const Card = props => {
     console.log("in clickPic");
     let element = document.getElementById(props.id);
     if (element.className === "card clicked") {
+      props.updateTopScore(props.score);
+      props.updateAlert("You lost :-( Go for 12 this time!");
       props.restartGame();
     } else {
       element.classList.add("clicked");

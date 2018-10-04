@@ -1,4 +1,8 @@
 .wrapper {
+    position: inherit;
     margin: auto;
+    background-color: rgb(16, 98, 165);
+    width: 960px;
+    padding-bottom: 750px
   }
   
