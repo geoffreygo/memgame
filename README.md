@@ -1,4 +1,4 @@
-Memory Game
+# Memory Game
 
 Memory Game is my first React app. I used the npm package create-react-app as starter code. React is quite powerful, but also complicated. Using JSX is sometimes intuitive and sometimes arcane. The object is to click on each hero's card without clicking on the same one twice. Sounds easy right? 
 
